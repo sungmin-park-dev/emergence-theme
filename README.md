@@ -2,8 +2,6 @@
 
 A minimal Jekyll portfolio theme for researchers and academics. Built with a custom design system featuring dual dark/light themes, glass morphism aesthetics, and content collections for projects, notes, and readings.
 
-**Live demo:** [sungmin-park-dev.github.io/emergence-theme](https://sungmin-park-dev.github.io/emergence-theme)
-
 ---
 
 ## Features
