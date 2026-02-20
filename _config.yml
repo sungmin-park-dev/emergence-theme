@@ -17,15 +17,14 @@ timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
 # 2. Page Structure & Content (How Your Site Looks)
 # ===========================================================================
 
-title: "emergence · Your Name"
-tagline: "your · research · tagline"
+title: "emergence · demo"
+tagline: "a minimal jekyll portfolio theme"
 author: "Your Name"
-description: "A minimal Jekyll portfolio theme"
-  sharing a journey of quantum study and project experiences
-url: "https://yourusername.github.io"
+description: "A minimal Jekyll portfolio theme for researchers and academics."
+url: "https://sungmin-park-dev.github.io"
 toc: true
 paginate: 10
-baseurl: "https://yourusername.github.io"
+baseurl: "/emergence-theme"
 
 # ===========================================================================
 # 3. Personal Information & Social Media (Who You Are)
@@ -33,11 +32,11 @@ baseurl: "https://yourusername.github.io"
 
 # GitHub integration
 github:
-  username: yourusername
+  username: sungmin-park-dev
 
 # Social profile information (used for SEO/structured data — see _data/profile.yml for site UI)
 social:
-  name: Sung-Min Park
+  name: Your Name
   links:
     - https://github.com/yourusername
 
@@ -87,7 +86,7 @@ cdn:
 comments:
   provider: utterances
   utterances:
-    repo: sungmin-park-dev/sungmin-park-dev.github.io
+    repo: sungmin-park-dev/emergence-theme
     issue_term: pathname
 
 # =========================
