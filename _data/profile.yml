@@ -1,0 +1,35 @@
+# =====================================================
+# emergence — Profile Data
+# =====================================================
+# Edit this file to update personal info site-wide.
+# Used in: _tabs/about.md, _layouts/base.html (SEO)
+# =====================================================
+
+# --- Identity ---
+name: "Your Name"
+name_ko: ""                        # optional: name in another language
+avatar: /assets/img/common/avatar.png
+
+# --- Affiliation ---
+program: "Your Program"
+institution: "Your Institution"
+status: ""                         # optional: current status note
+
+# --- Contact ---
+email: "your.email@example.com"
+cv_url: ""                         # set to /assets/files/cv.pdf when ready
+
+# --- Social Links ---
+social:
+  github: "https://github.com/yourusername"
+  linkedin: ""                     # optional
+  # instagram: ""                  # uncomment if needed
+
+# --- Research Interests ---
+research:
+  physics:
+    - "Topic 1: Brief description"
+    - "Topic 2: Brief description"
+  ml:
+    - "Topic 3: Brief description"
+    - "Topic 4: Brief description"

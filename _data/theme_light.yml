@@ -1,0 +1,104 @@
+# =====================================================
+# emergence Light Theme Tokens (Glacier)
+# =====================================================
+# 이 파일의 값을 수정하면 라이트 모드 디자인이 변경됩니다.
+# IMPORTANT: 쉼표나 특수문자를 포함하는 값은 반드시 "따옴표"로 감싸야 합니다.
+# 변경 후 `bundle exec jekyll build`로 재빌드 필요.
+# =====================================================
+# 컨셉: Deep Glacier — 빙하 깊은 곳의 선명한 청색, 가시성 대폭 개선
+# 변경점: 채도 상향, 텍스트 대비 강화, 카드/버튼 더 선명하게
+
+# --- Accent (Deep Glacier Blue: 채도 상향) ---
+color-accent: "#1560A8"
+color-accent-light: "#1D78CC"
+color-accent-dark: "#0E4A82"
+
+# --- Text (대비 강화: 더 짙은 네이비) ---
+color-text-primary: "rgba(5, 14, 32, 0.94)"
+color-text-secondary: "rgba(5, 14, 32, 0.68)"
+color-text-tertiary: "rgba(5, 14, 32, 0.42)"
+
+# --- Backgrounds (약간 서늘한 흰색 — 순백보다 인식하기 쉬운 ice tint) ---
+color-bg-body: "linear-gradient(160deg, #EEF5FA 0%, #F8FCFF 45%, #E8F2F8 100%)"
+color-bg-glass: "rgba(235, 246, 255, 0.88)"
+color-bg-glass-hover: "rgba(242, 250, 255, 0.96)"
+color-bg-nav: "rgba(242, 250, 255, 0.92)"
+color-bg-overlay: "rgba(190, 218, 238, 0.40)"
+color-bg-nav-shadow: "0 1px 0 rgba(60, 130, 195, 0.22), 0 2px 12px rgba(0, 0, 0, 0.06)"
+shadow-toggle: "0 1px 4px rgba(0, 0, 0, 0.12)"
+shadow-toggle-hover: "0 2px 8px rgba(0, 0, 0, 0.18)"
+
+# --- Borders (선명한 glacier 테두리: 가시성 개선) ---
+color-border-glass: "rgba(60, 125, 195, 0.32)"
+color-border-glass-hover: "rgba(30, 100, 175, 0.62)"
+color-border-accent: "rgba(30, 100, 175, 0.50)"
+color-border-accent-hover: "rgba(15, 75, 140, 0.80)"
+
+# --- Tags (선명한 파란 틴트) ---
+color-tag-bg: "rgba(40, 110, 185, 0.10)"
+color-tag-border: "rgba(30, 100, 175, 0.28)"
+color-tag-text: "#1255A0"
+
+# --- Shadows (라이트: 은은한 ambient shadow로 카드 구분) ---
+shadow-card: "0 2px 12px rgba(0, 30, 80, 0.08), 0 1px 4px rgba(0, 30, 80, 0.05)"
+shadow-card-hover: "0 6px 24px rgba(0, 30, 80, 0.14), 0 2px 8px rgba(0, 30, 80, 0.08)"
+shadow-glow-primary: "none"
+shadow-glow-secondary: "none"
+shadow-text: "none"
+shadow-focus-ring: "0 0 0 2px var(--color-accent-bg-subtle)"
+shadow-btn-glow: "0 0 16px rgba(30, 100, 175, 0.28)"
+shadow-filter-active: "0 0 20px rgba(30, 100, 175, 0.28), 0 4px 16px rgba(0, 30, 80, 0.10)"
+shadow-tag-hover: "0 0 12px rgba(30, 100, 175, 0.25)"
+shadow-tag-active: "0 0 16px rgba(30, 100, 175, 0.42)"
+
+# --- Subpage Background ---
+bg-image: none
+bg-color-page: "linear-gradient(160deg, #EEF5FA 0%, #F8FCFF 45%, #E8F2F8 100%)"
+bg-overlay-display: none
+bg-overlay: "rgba(205, 228, 245, 0.45)"
+bg-overlay-page: "rgba(205, 228, 245, 0.60)"
+bg-overlay-page-opacity: "0.60"
+
+# --- Components ---
+color-btn-bg: "rgba(21, 96, 168, 0.12)"
+color-btn-bg-hover: "rgba(21, 96, 168, 0.22)"
+color-btn-primary-bg: "rgba(21, 96, 168, 0.18)"
+color-code-bg: "rgba(21, 96, 168, 0.07)"
+color-code-border: "rgba(21, 96, 168, 0.25)"
+color-code-text: "#0E4A82"
+color-pre-bg: "rgba(228, 242, 252, 0.95)"
+color-project-gradient-1: "rgba(60, 150, 220, 0.22)"
+color-project-gradient-2: "rgba(70, 95, 210, 0.18)"
+color-project-gradient-h1: "rgba(21, 96, 168, 0.30)"
+color-project-gradient-h2: "rgba(70, 95, 210, 0.28)"
+color-project-icon: "rgba(5, 14, 32, 0.25)"
+color-filter-bg: "rgba(40, 110, 185, 0.10)"
+color-accent-bg-subtle: "rgba(30, 100, 175, 0.07)"
+color-accent-bg-light: "rgba(30, 100, 175, 0.13)"
+color-accent-bg-medium: "rgba(30, 100, 175, 0.22)"
+color-accent-glow: "rgba(30, 100, 175, 0.26)"
+color-accent-glow-strong: "rgba(30, 100, 175, 0.44)"
+color-nav-border: "rgba(60, 130, 200, 0.22)"
+color-footer-border: "rgba(80, 145, 205, 0.24)"
+color-social-bg: "rgba(60, 130, 200, 0.13)"
+color-social-bg-hover: "rgba(30, 100, 175, 0.24)"
+color-separator: "rgba(5, 14, 32, 0.20)"
+color-table-header-bg: "rgba(60, 130, 200, 0.16)"
+color-select-option-bg: "#E8F2F8"
+color-tag-btn-text: "rgba(5, 14, 32, 0.78)"
+color-tag-btn-border: "rgba(60, 130, 200, 0.48)"
+
+# --- Hero ---
+color-hero-tagline: "rgba(5, 14, 32, 0.90)"
+shadow-hero-tagline: "0 1px 8px rgba(255, 255, 255, 0.75), 0 0 20px rgba(255, 255, 255, 0.45)"
+
+# --- Project Status (semantic, light — 선명하게) ---
+color-status-completed: "#006A3A"
+color-status-completed-bg: "rgba(0, 106, 58, 0.10)"
+color-status-completed-bd: "rgba(0, 106, 58, 0.42)"
+color-status-progress: "#9E6A00"
+color-status-progress-bg: "rgba(158, 106, 0, 0.10)"
+color-status-progress-bd: "rgba(158, 106, 0, 0.42)"
+color-status-planned: "#4A5F80"
+color-status-planned-bg: "rgba(74, 95, 128, 0.10)"
+color-status-planned-bd: "rgba(74, 95, 128, 0.40)"

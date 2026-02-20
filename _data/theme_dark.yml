@@ -1,0 +1,104 @@
+# =====================================================
+# emergence Dark Theme Tokens
+# =====================================================
+# 이 파일의 값을 수정하면 다크 모드 디자인이 변경됩니다.
+# IMPORTANT: 쉼표나 특수문자를 포함하는 값은 반드시 "따옴표"로 감싸야 합니다.
+# 변경 후 `bundle exec jekyll build`로 재빌드 필요.
+# =====================================================
+# 컨셉: Stellar Blue — 심우주의 청백색 항성광 (순수 cyan 대비 깊이감 + 가시성 강화)
+# 배경: 인디고-블랙으로 대비 극대화, 카드 glass 채도 개선
+
+# --- Accent (Stellar Blue: 청백 항성광) ---
+color-accent: "rgba(0, 200, 255, 0.92)"
+color-accent-light: "rgba(80, 220, 255, 1)"
+color-accent-dark: "rgba(0, 160, 210, 0.80)"
+
+# --- Text ---
+color-text-primary: "rgba(240, 248, 255, 0.98)"
+color-text-secondary: "rgba(200, 228, 248, 0.85)"
+color-text-tertiary: "rgba(160, 200, 230, 0.55)"
+
+# --- Backgrounds (인디고-블랙: OLED 최적화 + 우주 깊이감) ---
+color-bg-body: "linear-gradient(135deg, #010306 0%, #030812 50%, #020510 100%)"
+color-bg-glass: "rgba(5, 20, 45, 0.62)"
+color-bg-glass-hover: "rgba(8, 28, 60, 0.78)"
+color-bg-nav: "rgba(2, 6, 18, 0.88)"
+color-bg-overlay: "rgba(0, 5, 18, 0.58)"
+color-bg-nav-shadow: "0 1px 0 rgba(0, 200, 255, 0.22), 0 4px 24px rgba(0, 0, 0, 0.70)"
+shadow-toggle: "0 2px 8px rgba(0, 0, 0, 0.40)"
+shadow-toggle-hover: "0 4px 16px rgba(0, 0, 0, 0.55)"
+
+# --- Borders (Stellar Blue 테두리: 더 선명하게) ---
+color-border-glass: "rgba(0, 200, 255, 0.30)"
+color-border-glass-hover: "rgba(0, 200, 255, 0.70)"
+color-border-accent: "rgba(0, 200, 255, 0.55)"
+color-border-accent-hover: "rgba(80, 220, 255, 0.92)"
+
+# --- Tags ---
+color-tag-bg: "rgba(0, 200, 255, 0.14)"
+color-tag-border: "rgba(0, 200, 255, 0.50)"
+color-tag-text: "rgba(80, 220, 255, 1)"
+
+# --- Shadows (항성광 glow: 더 입체적) ---
+shadow-card: "0 4px 24px rgba(0, 0, 0, 0.65), 0 1px 6px rgba(0, 0, 0, 0.40), inset 0 1px 0 rgba(255, 255, 255, 0.06)"
+shadow-card-hover: "0 12px 48px rgba(0, 0, 0, 0.75), 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 24px rgba(0, 200, 255, 0.08)"
+shadow-glow-primary: "0 0 40px rgba(0, 200, 255, 0.75)"
+shadow-glow-secondary: "0 0 80px rgba(0, 200, 255, 0.35)"
+shadow-text: "0 2px 12px rgba(0, 0, 0, 0.65), 0 0 36px rgba(0, 200, 255, 0.12)"
+shadow-focus-ring: "0 0 0 2px var(--color-accent-bg-subtle)"
+shadow-btn-glow: "0 0 18px rgba(0, 200, 255, 0.45), 0 4px 20px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.07)"
+shadow-filter-active: "0 0 22px rgba(0, 200, 255, 0.45), 0 16px 48px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.40)"
+shadow-tag-hover: "0 0 14px rgba(0, 200, 255, 0.45)"
+shadow-tag-active: "0 0 18px rgba(0, 200, 255, 0.62)"
+
+# --- Subpage Background ---
+bg-image: none
+bg-color-page: "linear-gradient(135deg, #010306 0%, #030812 50%, #020510 100%)"
+bg-overlay-display: none
+bg-overlay: "rgba(0, 4, 16, 0.65)"
+bg-overlay-page: "rgba(0, 4, 16, 0.78)"
+bg-overlay-page-opacity: "0.78"
+
+# --- Components ---
+color-btn-bg: "rgba(0, 200, 255, 0.12)"
+color-btn-bg-hover: "rgba(0, 200, 255, 0.22)"
+color-btn-primary-bg: "rgba(0, 200, 255, 0.18)"
+color-code-bg: "rgba(0, 200, 255, 0.07)"
+color-code-border: "rgba(0, 200, 255, 0.20)"
+color-code-text: "rgba(80, 230, 255, 0.95)"
+color-pre-bg: "rgba(0, 0, 0, 0.65)"
+color-project-gradient-1: "rgba(0, 180, 255, 0.16)"
+color-project-gradient-2: "rgba(100, 80, 255, 0.16)"
+color-project-gradient-h1: "rgba(0, 190, 255, 0.26)"
+color-project-gradient-h2: "rgba(100, 80, 255, 0.26)"
+color-project-icon: "rgba(255, 255, 255, 0.24)"
+color-filter-bg: "rgba(0, 200, 255, 0.18)"
+color-accent-bg-subtle: "rgba(0, 200, 255, 0.07)"
+color-accent-bg-light: "rgba(0, 200, 255, 0.14)"
+color-accent-bg-medium: "rgba(0, 200, 255, 0.24)"
+color-accent-glow: "rgba(0, 200, 255, 0.38)"
+color-accent-glow-strong: "rgba(0, 200, 255, 0.55)"
+color-nav-border: "rgba(0, 200, 255, 0.18)"
+color-footer-border: "rgba(255, 255, 255, 0.07)"
+color-social-bg: "rgba(0, 200, 255, 0.09)"
+color-social-bg-hover: "rgba(0, 200, 255, 0.20)"
+color-separator: "rgba(255, 255, 255, 0.25)"
+color-table-header-bg: "rgba(0, 200, 255, 0.14)"
+color-select-option-bg: "#040d1e"
+color-tag-btn-text: "rgba(200, 238, 255, 1)"
+color-tag-btn-border: "rgba(0, 200, 255, 0.46)"
+
+# --- Hero ---
+color-hero-tagline: "rgba(200, 228, 248, 0.85)"
+shadow-hero-tagline: "0 1px 10px rgba(0, 0, 0, 0.70), 0 0 28px rgba(0, 200, 255, 0.10)"
+
+# --- Project Status (semantic, dark) ---
+color-status-completed: "#00E896"
+color-status-completed-bg: "rgba(0, 232, 150, 0.15)"
+color-status-completed-bd: "rgba(0, 232, 150, 0.50)"
+color-status-progress: "#FFB800"
+color-status-progress-bg: "rgba(255, 184, 0, 0.15)"
+color-status-progress-bd: "rgba(255, 184, 0, 0.50)"
+color-status-planned: "#8899BB"
+color-status-planned-bg: "rgba(136, 153, 187, 0.15)"
+color-status-planned-bd: "rgba(136, 153, 187, 0.45)"

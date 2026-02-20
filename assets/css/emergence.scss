@@ -1,0 +1,38 @@
+---
+# Only the main Sass file needs front matter (the dashes are needed)
+---
+
+@charset "UTF-8";
+
+// ============================================
+// Emergence Design System - Main Entry Point
+// ============================================
+// This file loads all SCSS modules and is compiled to emergence.css by Jekyll
+// Uses @use (Dart Sass module system) instead of deprecated @import
+
+// --------------------------------------------
+// Load Order
+// --------------------------------------------
+
+// 1. Variables (design tokens - must be first)
+@use 'emergence/variables';
+
+// 2. Base (resets and utilities)
+@use 'emergence/base';
+
+// 3. Typography (font system)
+@use 'emergence/typography';
+
+// 4. Components (reusable components)
+@use 'emergence/components';
+
+// 5. Navigation (header and nav)
+@use 'emergence/navigation';
+
+// 6. Pages (page-specific styles)
+@use 'emergence/pages/home';
+@use 'emergence/pages/projects';
+@use 'emergence/pages/notes';
+@use 'emergence/pages/readings';
+@use 'emergence/pages/about';
+@use 'emergence/pages/post';

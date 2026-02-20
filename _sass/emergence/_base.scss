@@ -1,0 +1,85 @@
+// ============================================
+// Base Styles
+// ============================================
+@use 'variables' as *;
+
+// --------------------------------------------
+// Base Reset
+// --------------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  // light mode: gradient, dark mode: solid — both driven by CSS vars
+  background: var(--color-bg-body);
+  min-height: 100vh;
+}
+
+// --------------------------------------------
+// Page Load Animation
+// --------------------------------------------
+
+html,
+body {
+  opacity: 0;
+  animation: pageLoad 1s ease-out forwards;
+}
+
+@keyframes pageLoad {
+  to {
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------
+// Utility Classes
+// --------------------------------------------
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.p-sm { padding: $spacing-sm; }
+.p-md { padding: $spacing-md; }
+.p-lg { padding: $spacing-lg; }
+.p-xl { padding: $spacing-xl; }
+
+// --------------------------------------------
+// Site Footer
+// --------------------------------------------
+
+.site-footer {
+  text-align: center;
+  padding: $spacing-md $spacing-lg;
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-text-tertiary;
+  letter-spacing: 0.08em;
+  margin-top: $spacing-xl;
+}
+
+// Homepage only — above background image, normal flow (naturally below cards)
+.site-footer-home {
+  position: relative;
+  margin-top: $spacing-lg;
+  padding: $spacing-sm $spacing-lg $spacing-md;
+  z-index: 1;
+}

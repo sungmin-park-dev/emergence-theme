@@ -1,0 +1,334 @@
+// ============================================
+// Projects Page
+// ============================================
+@use '../variables' as *;
+
+.projects-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-lg;
+}
+
+.projects-sort {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  label {
+    font-size: $fs-sm;
+    font-weight: $fw-light;
+    color: $color-text-secondary;
+  }
+}
+
+.sort-select {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
+  border: 1px solid $color-border-glass;
+  border-radius: $radius-sm;
+  padding: $spacing-xs $spacing-sm;
+  color: $color-text-primary;
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  font-family: $font-primary;
+  cursor: pointer;
+  transition: all $transition-normal;
+  box-shadow: $shadow-card;
+
+  &:hover {
+    border-color: $color-border-glass-hover;
+    background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary-blue;
+    box-shadow: $shadow-focus-ring;
+  }
+
+  option {
+    background: var(--color-select-option-bg);
+    color: $color-text-primary;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+  margin-top: $spacing-md;
+}
+
+.project-card {
+  background: $color-bg-glass;
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  // only active (unlocked) cards respond to hover
+  &:not(.locked):hover {
+    transform: translateY(-4px);
+    background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-glass-hover;
+  }
+}
+
+.project-thumbnail-link {
+  display: block;
+  text-decoration: none;
+  transition: all $transition-normal;
+
+  &:hover .project-thumbnail {
+    background: linear-gradient(135deg, var(--color-project-gradient-h1), var(--color-project-gradient-h2));
+
+    i {
+      color: $color-primary-blue-light;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--color-project-gradient-1), var(--color-project-gradient-2));
+  border-radius: $radius-md;
+  margin-bottom: $spacing-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $fs-3xl;
+  color: var(--color-project-icon);
+  transition: all $transition-normal;
+
+  i {
+    transition: all $transition-normal;
+  }
+}
+
+.project-title {
+  font-size: $fs-xl;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.project-description {
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-secondary;
+  line-height: $lh-normal;
+  flex-grow: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-top: $spacing-xs;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-tag-text;
+  background: $color-tag-bg;
+  border: 1px solid $color-tag-border;
+  border-radius: $radius-md;
+  padding: $spacing-xs * 0.5 $spacing-xs * 1.5;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: var(--color-accent-bg-light);
+    border-color: $color-border-blue-hover;
+  }
+}
+
+.project-button {
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  background: var(--color-btn-bg);
+  border: 1px solid $color-border-blue;
+  border-radius: $radius-sm;
+  padding: $spacing-xs * 1.5 $spacing-lg;
+  text-decoration: none;
+  transition: all $transition-fast;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background: var(--color-btn-bg-hover);
+    border-color: $color-border-blue-hover;
+    transform: translateY(-2px);
+    box-shadow: $shadow-card;
+  }
+  // active cards: highlight button with accent color
+  background: var(--color-btn-primary-bg);
+  border-color: var(--color-border-accent);
+  color: var(--color-accent-light);
+  font-weight: $fw-regular;
+  letter-spacing: 0.04em;
+
+  &:hover {
+    background: var(--color-accent-bg-medium);
+    border-color: var(--color-border-accent-hover);
+    box-shadow: $shadow-btn-glow;
+    color: var(--color-accent-light);
+  }
+}
+
+.project-card.locked {
+  cursor: default;
+  border-color: var(--color-border-glass);
+  box-shadow: $shadow-card;
+
+  &:hover {
+    transform: none;
+    box-shadow: $shadow-card;
+    background: $color-bg-glass;
+    border-color: $color-border-glass;
+  }
+}
+
+// .project-button.locked-btn: compound selector (specificity 0-2-0) overrides .project-button (0-1-0)
+// @extend .btn removed — .project-button already extends .btn, so extending again is redundant
+.project-button.locked-btn {
+  cursor: default;
+  pointer-events: none;
+  // blur + translucent treatment on button only — visualizes "locked" state
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: var(--color-bg-glass);
+  border-color: var(--color-border-glass);
+  color: $color-text-tertiary;
+  letter-spacing: 0.08em;
+  font-size: $fs-sm;
+  opacity: 0.7;
+
+  &:hover {
+    background: var(--color-bg-glass);
+    border-color: var(--color-border-glass);
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+// Project status badges — semantic colors, theme-invariant
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs * 0.5;
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  padding: $spacing-xs * 0.5 $spacing-sm;
+  border-radius: $radius-sm;
+  margin-bottom: $spacing-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+
+  &.status-completed {
+    color: var(--color-status-completed);
+    background: var(--color-status-completed-bg);
+    border-color: var(--color-status-completed-bd);
+
+    .status-icon { color: var(--color-status-completed); }
+  }
+
+  &.status-in-progress {
+    color: var(--color-status-progress);
+    background: var(--color-status-progress-bg);
+    border-color: var(--color-status-progress-bd);
+
+    .status-icon { color: var(--color-status-progress); }
+  }
+
+  &.status-planned {
+    color: var(--color-status-planned);
+    background: var(--color-status-planned-bg);
+    border-color: var(--color-status-planned-bd);
+
+    .status-icon { color: var(--color-status-planned); }
+  }
+}
+
+.status-icon {
+  font-size: $fs-xs * 0.4;
+}
+
+.projects-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
+  padding: $spacing-xl * 2;
+  color: $color-text-tertiary;
+  text-align: center;
+
+  i {
+    font-size: $fs-3xl * 1.5;
+    opacity: 0.3;
+  }
+
+  p {
+    font-size: $fs-lg;
+    font-weight: $fw-light;
+    margin: 0;
+  }
+}
+
+// --------------------------------------------
+// Responsive
+// --------------------------------------------
+
+@media (max-width: $breakpoint-desktop) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-controls {
+    justify-content: center;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-thumbnail {
+    height: 150px;
+  }
+
+  .projects-controls {
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  .projects-sort {
+    flex-direction: column;
+    gap: $spacing-xs;
+    text-align: center;
+  }
+}

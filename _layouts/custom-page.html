@@ -1,0 +1,21 @@
+---
+layout: base
+---
+
+<!-- Background -->
+<div class="page-bg"></div>
+
+<!-- Top Navigation -->
+{% include nav.html %}
+
+<!-- Page Container -->
+<div class="custom-page-container page-{{ page.slug }}">
+  <h1 class="page-title">{{ page.title | downcase }}</h1>
+  {% if page.description %}
+    <p class="page-subtitle">{{ page.description }}</p>
+  {% endif %}
+
+  <div class="page-content">
+    {{ content }}
+  </div>
+</div>

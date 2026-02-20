@@ -1,0 +1,202 @@
+# =========================
+# YAML Configuration File
+# _config.yml
+# =========================
+
+# _config.yml sets the whole site configuration for Jekyll, which is based on Ruby.
+# This file controls how your website looks, behaves, and what information it displays.
+
+# ===========================================================================
+# 1. Site Basic Engine (Jekyll Core Settings)
+# ===========================================================================
+
+lang: en # Options: 'en' (English), 'ko' or 'ko-KR' (Korean) etc.
+timezone: Asia/Seoul # Format: Area/City (e.g., Asia/Seoul, America/New_York)
+
+# ===========================================================================
+# 2. Page Structure & Content (How Your Site Looks)
+# ===========================================================================
+
+title: "emergence · Your Name"
+tagline: "your · research · tagline"
+author: "Your Name"
+description: "A minimal Jekyll portfolio theme"
+  sharing a journey of quantum study and project experiences
+url: "https://yourusername.github.io"
+toc: true
+paginate: 10
+baseurl: "https://yourusername.github.io"
+
+# ===========================================================================
+# 3. Personal Information & Social Media (Who You Are)
+# ===========================================================================
+
+# GitHub integration
+github:
+  username: yourusername
+
+# Social profile information (used for SEO/structured data — see _data/profile.yml for site UI)
+social:
+  name: Sung-Min Park
+  links:
+    - https://github.com/yourusername
+
+
+# =========================
+# 4. External Services & SEO (Configure these later when needed)
+# =========================
+
+# Search Engine Verification (configure when you want to track site performance)
+webmaster_verifications:
+  google: # Add Google Search Console verification code later
+  bing: # Add Bing Webmaster Tools verification code later
+  alexa:
+  yandex:
+  baidu:
+  facebook:
+
+# Web Analytics (configure when you want to see site statistics)
+analytics:
+  google:
+    id: # Add Google Analytics 4 Measurement ID later (e.g., G-XXXXXXXXXX)
+  goatcounter:
+    id: # Add GoatCounter site code later (privacy-friendly option)
+  umami:
+    id:
+    domain:
+  matomo:
+    id:
+    domain:
+  cloudflare:
+    id:
+  fathom:
+    id:
+
+# Page view counter
+pageviews:
+  provider: # Set to 'goatcounter' if using GoatCounter analytics
+
+# CDN for media files (leave empty unless using external CDN)
+cdn:
+
+# =========================
+# 5. User Interaction Features
+# =========================
+
+# Comments system
+comments:
+  provider: utterances
+  utterances:
+    repo: sungmin-park-dev/sungmin-park-dev.github.io
+    issue_term: pathname
+
+# =========================
+# 6. Advanced Technical Settings (Don't modify unless you know what you're doing)
+# =========================
+
+# Jekyll plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+
+# Markdown processing settings
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Collections configuration
+collections:
+  tabs:
+    output: true
+    sort_by: order
+  notes:
+    output: true
+    permalink: /notes/:path/
+  readings:
+    output: true
+    permalink: /readings/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Default settings for different content types
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+      toc: true
+  - scope:
+      path: ""
+      type: readings
+    values:
+      layout: post
+      toc: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: post
+      toc: true
+
+# CSS compilation settings
+sass:
+  style: compressed
+  encoding: utf-8
+
+# HTML compression settings
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+# Files to exclude from build
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - CLAUDE.md
+  - DESIGN.md
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - .claude/
+

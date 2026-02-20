@@ -1,0 +1,291 @@
+// ============================================
+// Emergence Design System - Components
+// ============================================
+@use 'variables' as *;
+
+// --------------------------------------------
+// Background Image (unified via CSS var)
+// --------------------------------------------
+
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-background;
+  // --bg-image: none = solid/gradient, url = image + overlay
+  background: var(--bg-color-page);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  // show overlay only when image is present (hidden when none)
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-overlay-page);
+    opacity: var(--bg-overlay-page-opacity);
+    display: var(--bg-overlay-display, block);
+  }
+}
+
+// --------------------------------------------
+// Glass Card
+// --------------------------------------------
+
+.glass-card {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
+  border-radius: $radius-xl;
+  border: 1px solid $color-border-glass;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  transition: all $transition-normal;
+
+  // light mode: keep 1px border (separation via border-color only)
+  [data-theme="light"] & {
+    border-width: 1px;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    background: $color-bg-glass-hover;
+    box-shadow: $shadow-card-hover;
+    border-color: $color-border-glass-hover;
+  }
+}
+
+// --------------------------------------------
+// Tag & Badge
+// --------------------------------------------
+
+.tag,
+.badge {
+  display: inline-block;
+  font-size: $fs-xs;
+  font-weight: $fw-light;
+  color: $color-tag-text;
+  background: $color-tag-bg;
+  border: 1px solid $color-tag-border;
+  border-radius: $radius-md;
+  padding: $spacing-xs * 0.5 $spacing-xs * 1.5;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: var(--color-accent-bg-light);
+    border-color: $color-border-blue-hover;
+  }
+}
+
+// --------------------------------------------
+// Button
+// --------------------------------------------
+
+.btn {
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: $fs-base;
+  font-weight: $fw-light;
+  color: $color-text-primary;
+  background: var(--color-btn-bg);
+  border: 1px solid $color-border-blue;
+  border-radius: $radius-sm;
+  padding: $spacing-xs * 1.5 $spacing-lg;
+  text-decoration: none;
+  transition: all $transition-fast;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background: var(--color-btn-bg-hover);
+    border-color: $color-border-blue-hover;
+    transform: translateY(-2px);
+    box-shadow: $shadow-card;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  i {
+    margin-right: $spacing-xs;
+  }
+}
+
+.btn-primary {
+  background: var(--color-btn-primary-bg);
+  border-color: $color-border-blue-hover;
+}
+
+.btn-large {
+  font-size: $fs-md;
+  padding: $spacing-sm $spacing-xl;
+  border-radius: $radius-md;
+}
+
+// --------------------------------------------
+// Page Container
+// --------------------------------------------
+
+.custom-page-container {
+  min-height: 100vh;
+  padding: 6rem $spacing-xl $spacing-xl;
+  opacity: 0;
+  animation: fadeIn $transition-page-load;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------
+// Responsive
+// --------------------------------------------
+
+@media (max-width: $breakpoint-tablet) {
+  .custom-page-container {
+    padding: 5rem $spacing-md $spacing-lg;
+  }
+
+  .glass-card {
+    padding: $spacing-md;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .custom-page-container {
+    padding: 5rem $spacing-sm $spacing-md;
+  }
+}
+
+// --------------------------------------------
+// Tag Nebula (Reusable Tag Cloud)
+// --------------------------------------------
+
+.tag-nebula {
+  margin-top: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.tag-nebula-box {
+  background: $color-bg-glass;
+  backdrop-filter: $blur-glass;
+  -webkit-backdrop-filter: $blur-glass;
+  border: 1px solid $color-border-glass;
+  box-shadow: $shadow-card;
+  border-radius: $radius-sm;
+  padding: $spacing-xs $spacing-md;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+
+  [data-theme="light"] & {
+    border-width: 1px;
+  }
+
+  &:hover .tag-nebula-label {
+    color: $color-primary-blue-light;
+  }
+
+  &.expanded {
+    width: 100%;
+    border-radius: $radius-lg;
+    border-color: $color-border-glass;
+    padding: $spacing-lg;
+    cursor: pointer;
+  }
+}
+
+.tag-nebula-label {
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  font-family: $font-primary;
+  color: $color-text-secondary;
+  letter-spacing: 0.05em;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  text-align: center;
+  opacity: 1;
+
+  .tag-nebula-box.expanded & {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+  }
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-sm;
+  align-items: center;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &.expanded {
+    max-height: 600px;
+    opacity: 1;
+  }
+}
+
+.tag-btn {
+  --tag-intensity: 1;
+  background: var(--color-filter-bg);
+  border: 1px solid var(--color-tag-btn-border);
+  border-radius: $radius-sm;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  font-family: $font-primary;
+  color: var(--color-tag-btn-text);
+  cursor: pointer;
+  transition: all $transition-normal;
+  white-space: nowrap;
+
+  &:hover {
+    background: $color-bg-glass-hover;
+    border-color: $color-border-blue;
+    color: $color-primary-blue-light;
+    box-shadow: $shadow-tag-hover;
+  }
+
+  &.active {
+    background: var(--color-accent-bg-medium);
+    border-color: $color-primary-blue;
+    color: $color-primary-blue-light;
+    box-shadow: $shadow-tag-active;
+  }
+}
+
+.tag-count {
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+
+// Responsive
+@media (max-width: $breakpoint-tablet) {
+  .tag-cloud {
+    padding: $spacing-md;
+    gap: $spacing-xs;
+  }
+
+  .tag-btn {
+    font-size: $fs-xs;
+  }
+}

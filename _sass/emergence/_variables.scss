@@ -1,0 +1,336 @@
+// ============================================
+// Emergence Design System - Variables
+// ============================================
+
+// --------------------------------------------
+// Typography
+// --------------------------------------------
+
+// Font Families
+$font-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', sans-serif;
+$font-monospace: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+
+// Font Weights
+$fw-thin: 100;
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+
+// Font Sizes (Base: 16px)
+$fs-xs: 0.75rem;
+$fs-sm: 0.85rem;
+$fs-base: 1rem;
+$fs-md: 1rem;
+$fs-lg: 1.2rem;
+$fs-xl: 1.5rem;
+$fs-2xl: 2rem;
+$fs-3xl: 3rem;
+$fs-hero: 8vw;
+$fs-home-hero: 12vw;
+
+// Letter Spacing
+$ls-tight: -0.01em;
+$ls-normal: 0;
+$ls-wide: 0.02em;
+
+// Line Heights
+$lh-tight: 1;
+$lh-snug: 1.4;
+$lh-normal: 1.6;
+$lh-relaxed: 1.8;
+
+// --------------------------------------------
+// Visual (non-color)
+// --------------------------------------------
+
+$blur-glass: blur(10px);
+$blur-nav: blur(15px);
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 20px;
+$radius-full: 50%;
+
+// --------------------------------------------
+// Spacing
+// --------------------------------------------
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
+
+// --------------------------------------------
+// Transitions
+// --------------------------------------------
+
+$transition-fast: 0.3s ease;
+$transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 1s ease-in;
+$transition-page-load: 1s ease-out forwards;
+
+// --------------------------------------------
+// Breakpoints
+// --------------------------------------------
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 800px;
+$breakpoint-wide: 1280px;
+
+// --------------------------------------------
+// Z-Index
+// --------------------------------------------
+
+$z-background: -1;
+$z-base: 0;
+$z-dropdown: 10;
+$z-sticky: 100;
+$z-nav: 100;
+$z-modal: 1000;
+$z-tooltip: 2000;
+
+// ============================================
+// CSS Custom Properties (Theme Switching)
+// ============================================
+// NOTE: This block contains fallback defaults only.
+// Actual theme values are managed in _data/theme_dark.yml and _data/theme_light.yml.
+// To update the theme, edit the _data/*.yml files (no SCSS knowledge required).
+
+:root {
+  // ─── DARK MODE: Stellar Blue ────────────────────────────
+  // Deep-space blue-white starlight — deeper contrast and visibility than pure cyan
+  // Accent (Stellar Blue)
+  --color-accent:              rgba(0, 200, 255, 0.92);
+  --color-accent-light:        rgba(80, 220, 255, 1);
+  --color-accent-dark:         rgba(0, 160, 210, 0.80);
+
+  // Text
+  --color-text-primary:        rgba(240, 248, 255, 0.98);
+  --color-text-secondary:      rgba(200, 228, 248, 0.85);
+  --color-text-tertiary:       rgba(160, 200, 230, 0.55);
+
+  // Backgrounds — Indigo-black: OLED optimized, deep-space depth
+  --color-bg-body:             linear-gradient(135deg, #010306 0%, #030812 50%, #020510 100%);
+  --color-bg-glass:            rgba(5, 20, 45, 0.62);
+  --color-bg-glass-hover:      rgba(8, 28, 60, 0.78);
+  --color-bg-nav:              rgba(2, 6, 18, 0.88);
+  --color-bg-overlay:          rgba(0, 5, 18, 0.58);
+  --color-bg-nav-shadow:       0 1px 0 rgba(0, 200, 255, 0.22), 0 4px 24px rgba(0, 0, 0, 0.70);
+  --shadow-toggle:             0 2px 8px rgba(0, 0, 0, 0.40);
+  --shadow-toggle-hover:       0 4px 16px rgba(0, 0, 0, 0.55);
+
+  // Borders — Stellar Blue borders
+  --color-border-glass:        rgba(0, 200, 255, 0.30);
+  --color-border-glass-hover:  rgba(0, 200, 255, 0.70);
+  --color-border-accent:       rgba(0, 200, 255, 0.55);
+  --color-border-accent-hover: rgba(80, 220, 255, 0.92);
+
+  // Tags
+  --color-tag-bg:              rgba(0, 200, 255, 0.14);
+  --color-tag-border:          rgba(0, 200, 255, 0.50);
+  --color-tag-text:            rgba(80, 220, 255, 1);
+
+  // Shadows
+  --shadow-card:               0 4px 24px rgba(0, 0, 0, 0.65), 0 1px 6px rgba(0, 0, 0, 0.40), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --shadow-card-hover:         0 12px 48px rgba(0, 0, 0, 0.75), 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 24px rgba(0, 200, 255, 0.08);
+  --shadow-glow-primary:       0 0 40px rgba(0, 200, 255, 0.75);
+  --shadow-glow-secondary:     0 0 80px rgba(0, 200, 255, 0.35);
+  --shadow-text:               0 2px 12px rgba(0, 0, 0, 0.65), 0 0 36px rgba(0, 200, 255, 0.12);
+  // Interactive shadows (tokenized: removes hardcoded values from partials)
+  --shadow-focus-ring:         0 0 0 2px var(--color-accent-bg-subtle);
+  --shadow-btn-glow:           0 0 18px rgba(0, 200, 255, 0.45), 0 4px 20px rgba(0, 0, 0, 0.55), 0 1px 6px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --shadow-filter-active:      0 0 22px rgba(0, 200, 255, 0.45), 0 16px 48px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.40);
+  --shadow-tag-hover:          0 0 14px rgba(0, 200, 255, 0.45);
+  --shadow-tag-active:         0 0 18px rgba(0, 200, 255, 0.62);
+
+  // Subpage background
+  --bg-image:                  none;
+  --bg-color-page:             linear-gradient(135deg, #010306 0%, #030812 50%, #020510 100%);
+  --bg-overlay-display:        none;
+  --bg-overlay:                rgba(0, 4, 16, 0.65);
+  --bg-overlay-page:           rgba(0, 4, 16, 0.78);
+  --bg-overlay-page-opacity:   0.78;
+
+  // Component-specific
+  --color-btn-bg:              rgba(0, 200, 255, 0.12);
+  --color-btn-bg-hover:        rgba(0, 200, 255, 0.22);
+  --color-btn-primary-bg:      rgba(0, 200, 255, 0.18);
+  --color-code-bg:             rgba(0, 200, 255, 0.07);
+  --color-code-border:         rgba(0, 200, 255, 0.20);
+  --color-code-text:           rgba(80, 230, 255, 0.95);
+  --color-pre-bg:              rgba(0, 0, 0, 0.65);
+  --color-project-gradient-1:  rgba(0, 180, 255, 0.16);
+  --color-project-gradient-2:  rgba(100, 80, 255, 0.16);
+  --color-project-gradient-h1: rgba(0, 190, 255, 0.26);
+  --color-project-gradient-h2: rgba(100, 80, 255, 0.26);
+  --color-project-icon:        rgba(255, 255, 255, 0.24);
+  --color-filter-bg:           rgba(0, 200, 255, 0.18);
+  --color-accent-bg-subtle:    rgba(0, 200, 255, 0.07);
+  --color-accent-bg-light:     rgba(0, 200, 255, 0.14);
+  --color-accent-bg-medium:    rgba(0, 200, 255, 0.24);
+  --color-accent-glow:         rgba(0, 200, 255, 0.38);
+  --color-accent-glow-strong:  rgba(0, 200, 255, 0.55);
+  --color-nav-border:          rgba(0, 200, 255, 0.18);
+  --color-footer-border:       rgba(255, 255, 255, 0.07);
+  --color-social-bg:           rgba(0, 200, 255, 0.09);
+  --color-social-bg-hover:     rgba(0, 200, 255, 0.20);
+  --color-separator:           rgba(255, 255, 255, 0.25);
+  --color-table-header-bg:     rgba(0, 200, 255, 0.14);
+  --color-select-option-bg:    #040d1e;
+  --color-tag-btn-text:        rgba(200, 238, 255, 1);
+  --color-tag-btn-border:      rgba(0, 200, 255, 0.46);
+
+  // Hero tagline
+  --color-hero-tagline:        rgba(200, 228, 248, 0.85);
+  --shadow-hero-tagline:       0 1px 10px rgba(0, 0, 0, 0.70), 0 0 28px rgba(0, 200, 255, 0.10);
+
+  // Project status — vivid semantic colors (dark)
+  --color-status-completed:    #00E896;
+  --color-status-completed-bg: rgba(0, 232, 150, 0.15);
+  --color-status-completed-bd: rgba(0, 232, 150, 0.50);
+  --color-status-progress:     #FFB800;
+  --color-status-progress-bg:  rgba(255, 184, 0, 0.15);
+  --color-status-progress-bd:  rgba(255, 184, 0, 0.50);
+  --color-status-planned:      #8899BB;
+  --color-status-planned-bg:   rgba(136, 153, 187, 0.15);
+  --color-status-planned-bd:   rgba(136, 153, 187, 0.45);
+}
+
+[data-theme="light"] {
+  // ─── LIGHT MODE: Deep Glacier ───────────────────────────
+  // Vivid blue from glacial depths — increased saturation for visibility
+  //
+  // Accent: Deep Glacier Blue (#1560A8)
+  --color-accent:              #1560A8;
+  --color-accent-light:        #1D78CC;
+  --color-accent-dark:         #0E4A82;
+
+  // Text — enhanced contrast: deeper navy
+  --color-text-primary:        rgba(5, 14, 32, 0.94);
+  --color-text-secondary:      rgba(5, 14, 32, 0.68);
+  --color-text-tertiary:       rgba(5, 14, 32, 0.42);
+
+  // Backgrounds — cool ice tint (improves card contrast against pure white)
+  --color-bg-body:             linear-gradient(160deg, #EEF5FA 0%, #F8FCFF 45%, #E8F2F8 100%);
+  --color-bg-glass:            rgba(235, 246, 255, 0.88);
+  --color-bg-glass-hover:      rgba(242, 250, 255, 0.96);
+  --color-bg-nav:              rgba(242, 250, 255, 0.92);
+  --color-bg-overlay:          rgba(190, 218, 238, 0.40);
+  --color-bg-nav-shadow:       0 1px 0 rgba(60, 130, 195, 0.22), 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-toggle:             0 1px 4px rgba(0, 0, 0, 0.12);
+  --shadow-toggle-hover:       0 2px 8px rgba(0, 0, 0, 0.18);
+
+  // Borders — vivid glacier borders (improved visibility)
+  --color-border-glass:        rgba(60, 125, 195, 0.32);
+  --color-border-glass-hover:  rgba(30, 100, 175, 0.62);
+  --color-border-accent:       rgba(30, 100, 175, 0.50);
+  --color-border-accent-hover: rgba(15, 75, 140, 0.80);
+
+  // Tags — vivid blue tint
+  --color-tag-bg:              rgba(40, 110, 185, 0.10);
+  --color-tag-border:          rgba(30, 100, 175, 0.28);
+  --color-tag-text:            #1255A0;
+
+  // Shadows — subtle ambient shadows for card separation
+  --shadow-card:               0 2px 12px rgba(0, 30, 80, 0.08), 0 1px 4px rgba(0, 30, 80, 0.05);
+  --shadow-card-hover:         0 6px 24px rgba(0, 30, 80, 0.14), 0 2px 8px rgba(0, 30, 80, 0.08);
+  --shadow-glow-primary:       none;
+  --shadow-glow-secondary:     none;
+  --shadow-text:               none;
+  --shadow-focus-ring:         0 0 0 2px var(--color-accent-bg-subtle);
+  --shadow-btn-glow:           0 0 16px rgba(30, 100, 175, 0.28);
+  --shadow-filter-active:      0 0 20px rgba(30, 100, 175, 0.28), 0 4px 16px rgba(0, 30, 80, 0.10);
+  --shadow-tag-hover:          0 0 12px rgba(30, 100, 175, 0.25);
+  --shadow-tag-active:         0 0 16px rgba(30, 100, 175, 0.42);
+
+  // Subpage background
+  --bg-image:                  none;
+  --bg-color-page:             linear-gradient(160deg, #EEF5FA 0%, #F8FCFF 45%, #E8F2F8 100%);
+  --bg-overlay-display:        none;
+  --bg-overlay:                rgba(205, 228, 245, 0.45);
+  --bg-overlay-page:           rgba(205, 228, 245, 0.60);
+  --bg-overlay-page-opacity:   0.60;
+
+  // Component-specific
+  --color-btn-bg:              rgba(21, 96, 168, 0.12);
+  --color-btn-bg-hover:        rgba(21, 96, 168, 0.22);
+  --color-btn-primary-bg:      rgba(21, 96, 168, 0.18);
+  --color-code-bg:             rgba(21, 96, 168, 0.07);
+  --color-code-border:         rgba(21, 96, 168, 0.25);
+  --color-code-text:           #0E4A82;
+  --color-pre-bg:              rgba(228, 242, 252, 0.95);
+  --color-project-gradient-1:  rgba(60, 150, 220, 0.22);
+  --color-project-gradient-2:  rgba(70, 95, 210, 0.18);
+  --color-project-gradient-h1: rgba(21, 96, 168, 0.30);
+  --color-project-gradient-h2: rgba(70, 95, 210, 0.28);
+  --color-project-icon:        rgba(5, 14, 32, 0.25);
+  --color-filter-bg:           rgba(40, 110, 185, 0.10);
+  --color-accent-bg-subtle:    rgba(30, 100, 175, 0.07);
+  --color-accent-bg-light:     rgba(30, 100, 175, 0.13);
+  --color-accent-bg-medium:    rgba(30, 100, 175, 0.22);
+  --color-accent-glow:         rgba(30, 100, 175, 0.26);
+  --color-accent-glow-strong:  rgba(30, 100, 175, 0.44);
+  --color-nav-border:          rgba(60, 130, 200, 0.22);
+  --color-footer-border:       rgba(80, 145, 205, 0.24);
+  --color-social-bg:           rgba(60, 130, 200, 0.13);
+  --color-social-bg-hover:     rgba(30, 100, 175, 0.24);
+  --color-separator:           rgba(5, 14, 32, 0.20);
+  --color-table-header-bg:     rgba(60, 130, 200, 0.16);
+  --color-select-option-bg:    #E8F2F8;
+  --color-tag-btn-text:        rgba(5, 14, 32, 0.78);
+  --color-tag-btn-border:      rgba(60, 130, 200, 0.48);
+
+  // Hero tagline — vivid navy readability over glacial background
+  --color-hero-tagline:        rgba(5, 14, 32, 0.90);
+  --shadow-hero-tagline:       0 1px 8px rgba(255, 255, 255, 0.75), 0 0 20px rgba(255, 255, 255, 0.45);
+
+  // Project status — vivid semantic colors (light)
+  --color-status-completed:    #006A3A;
+  --color-status-completed-bg: rgba(0, 106, 58, 0.10);
+  --color-status-completed-bd: rgba(0, 106, 58, 0.42);
+  --color-status-progress:     #9E6A00;
+  --color-status-progress-bg:  rgba(158, 106, 0, 0.10);
+  --color-status-progress-bd:  rgba(158, 106, 0, 0.42);
+  --color-status-planned:      #4A5F80;
+  --color-status-planned-bg:   rgba(74, 95, 128, 0.10);
+  --color-status-planned-bd:   rgba(74, 95, 128, 0.40);
+}
+
+// ============================================
+// SCSS Variables -> CSS Custom Properties
+// (wrapper for backward compatibility)
+// ============================================
+
+$color-primary-blue:        var(--color-accent);
+$color-primary-blue-light:  var(--color-accent-light);
+$color-primary-blue-dark:   var(--color-accent-dark);
+$color-text-primary:        var(--color-text-primary);
+$color-text-secondary:      var(--color-text-secondary);
+$color-text-tertiary:       var(--color-text-tertiary);
+$color-bg-glass:            var(--color-bg-glass);
+$color-bg-glass-hover:      var(--color-bg-glass-hover);
+$color-bg-nav:              var(--color-bg-nav);
+$color-bg-overlay:          var(--color-bg-overlay);
+$color-border-glass:        var(--color-border-glass);
+$color-border-glass-hover:  var(--color-border-glass-hover);
+$color-border-blue:         var(--color-border-accent);
+$color-border-blue-hover:   var(--color-border-accent-hover);
+$color-tag-bg:              var(--color-tag-bg);
+$color-tag-border:          var(--color-tag-border);
+$color-tag-text:            var(--color-tag-text);
+$shadow-card:               var(--shadow-card);
+$shadow-card-hover:         var(--shadow-card-hover);
+$shadow-glow-primary:       var(--shadow-glow-primary);
+$shadow-glow-secondary:     var(--shadow-glow-secondary);
+$shadow-text:               var(--shadow-text);
+$shadow-focus-ring:         var(--shadow-focus-ring);
+$shadow-btn-glow:           var(--shadow-btn-glow);
+$shadow-filter-active:      var(--shadow-filter-active);
+$shadow-tag-hover:          var(--shadow-tag-hover);
+$shadow-tag-active:         var(--shadow-tag-active);
